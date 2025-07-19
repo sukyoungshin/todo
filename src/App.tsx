@@ -40,11 +40,11 @@ function App() {
   const toggleTodo = async (selectedToDoId: number) => {
     try {
       const currentTodo = todos.find((todo) => todo.id === selectedToDoId);
-      if (!currentTodo) return;
+      const newCompleted = !currentTodo?.completed;
 
       const { data, error } = await supabase
         .from("todos")
-        .update({ completed: currentTodo?.completed })
+        .update({ completed: newCompleted })
         .eq("id", selectedToDoId)
         .select();
 
@@ -67,9 +67,7 @@ function App() {
     try {
       // Optimistic UI
       const backup = todos;
-      setTodos((prev) =>
-        prev.filter((todo) => todo.id !== selectedToDoId)
-      );
+      setTodos((prev) => prev.filter((todo) => todo.id !== selectedToDoId));
 
       const { error } = await supabase
         .from("todos")
