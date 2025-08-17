@@ -1,5 +1,5 @@
 # 간단한 ToDo 앱
-Supabase 연동과 Jest 기반 단위테스트로 CRUD 기능을 검증한 미니 프로젝트
+Supabase 연동과 Jest 기반 단위/통합테스트로 CRUD 기능을 검증한 미니 프로젝트
 
 ## 사용 기술
 React, TypeScript, Supabase, Jest, React Testing Library
