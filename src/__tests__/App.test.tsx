@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom';
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from '@testing-library/user-event';
-import App from "./App";
-import { supabase } from "./lib/supabase";
+import App from "../App";
+import { supabase } from "../lib/supabase";
 
 // Supabase 클라이언트 모킹
-jest.mock("./lib/supabase", () => ({
+jest.mock("../lib/supabase", () => ({
   supabase: {
     from: jest.fn(),
   },
