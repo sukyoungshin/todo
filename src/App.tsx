@@ -17,6 +17,8 @@ function App() {
   const addTodo = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!inputValue.trim()) return;
+
     try {
       const { data, error } = await supabase
         .from("todos")
